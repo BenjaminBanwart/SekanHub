@@ -16,13 +16,13 @@ export default function Topbar() {
                         <Button variant="success" style={{fontSize: "18px"}}>Sign Up</Button>{' '}
                     </Nav> */}
                     <Nav style={{padding: "24px 40px 20px 40px", fontSize: "18px", lineHeight: "26px", fontWeight: "bolder", display: "flex" }} >
-                        <Nav.Link style={{color: "#343538"}} href="#home">Home</Nav.Link>
+                        <Nav.Link style={{color: "#343538"}} href="/">Home</Nav.Link>
                     </Nav>
                     <Nav style={{padding: "24px 40px 20px 40px", fontSize: "18px", lineHeight: "26px", fontWeight: "bolder", display: "flex" }} >
-                        <Nav.Link style={{color: "#343538"}} href="#applications">Applications</Nav.Link>
+                        <Nav.Link style={{color: "#343538"}} href="applications">Applications</Nav.Link>
                     </Nav>
                     <Nav style={{padding: "24px 40px 20px 40px", fontSize: "18px", lineHeight: "26px", fontWeight: "bolder", display: "flex" }} >
-                        <Nav.Link style={{color: "#343538"}} href="#help">Help</Nav.Link>
+                        <Nav.Link style={{color: "#343538"}} href="help">Help</Nav.Link>
                     </Nav>
             </Navbar>
         </div>
