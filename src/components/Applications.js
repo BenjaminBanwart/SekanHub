@@ -26,12 +26,23 @@ export default function Applications() {
         const cookies = new Cookies();
             axios.get('http://localhost:3080/orderhive_refresh')
             .then((res)=> {
-                if(res.data !== 429){
+                if(res.data === false){
+                    console.log(cookies.get('access_key_id_cookie'))
+                    console.log(cookies.get('secret_key_cookie'))
+                    console.log(cookies.get('session_token_cookie'))
                     console.log(res.data);
-                    cookies.set('access_key_id_cookie', { access_key_id: res.data.access_key_id }, { path: '/', expires: new Date(Date.now()+86400) })
-                    console.log(cookies.get('access_key_id_cookie'))
                 } else {
+                    var now = new Date();
+                    var time = now.getTime();
+                    time += 3600 * 1000;
+                    now.setTime(time);
+                    console.log(res.data);
+                    cookies.set('access_key_id_cookie', { access_key_id: res.data.access_key_id }, { path: '/', maxAge: 1800 })
                     console.log(cookies.get('access_key_id_cookie'))
+                    cookies.set('secret_key_cookie', { secret_key: res.data.secret_key }, { path: '/', maxAge: 1800 })
+                    console.log(cookies.get('secret_key_cookie'))
+                    cookies.set('session_token_cookie', { session_token: res.data.session_token }, { path: '/', maxAge: 1800 })
+                    console.log(cookies.get('session_token_cookie'))
                 }
             })
     }, [])
