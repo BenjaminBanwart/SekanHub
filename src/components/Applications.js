@@ -11,9 +11,9 @@ import { useEffect } from 'react'
 const cookies = new Cookies();
 
 const handleButtonClick = () => {
-    axios.post('http://localhost:3080/orderhive_get_products', {
+    axios.post('http://localhost:4000/orderhive_get_products', {
         access_key_id: cookies.get('access_key_id_cookie').access_key_id,
-        secret_key_id: cookies.get('secret_key_cookie').secret_key,
+        secret_key: cookies.get('secret_key_cookie').secret_key,
         session_token: cookies.get('session_token_cookie').session_token
     })
     .then((response) => {
@@ -24,7 +24,7 @@ const handleButtonClick = () => {
 export default function Applications() {
 
     useEffect(() => {
-            axios.get('http://localhost:3080/orderhive_refresh')
+            axios.get('http://localhost:4000/orderhive_refresh')
             .then((res)=> {
                 if(res.data === false){
                     console.log(cookies.get('access_key_id_cookie'))
