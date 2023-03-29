@@ -30,6 +30,7 @@ export default function Applications() {
                     console.log(cookies.get('access_key_id_cookie'))
                     console.log(cookies.get('secret_key_cookie'))
                     console.log(cookies.get('session_token_cookie'))
+                    console.log(cookies.get('region_cookie'))
                     console.log(res.data);
                 } else {
                     var now = new Date();
@@ -43,6 +44,8 @@ export default function Applications() {
                     console.log(cookies.get('secret_key_cookie'))
                     cookies.set('session_token_cookie', { session_token: res.data.session_token }, { path: '/', maxAge: 1800 })
                     console.log(cookies.get('session_token_cookie'))
+                    cookies.set('region_cookie', { region: res.data.region }, { path: '/', maxAge: 1800 })
+                    console.log(cookies.get('region_cookie'))
                 }
             })
     }, [])
