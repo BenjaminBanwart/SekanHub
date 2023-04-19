@@ -1,12 +1,11 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Button from  'react-bootstrap/Button'
 
 export default function Topbar() {
     return (
         <div>
             <Navbar bg="light" expand="lg" >
-                <Navbar.Brand style={{margin: "5px 0 0 20px"}} href="/"><img src='https://secureprintorder.world-cdnserv.com/9520SekanP/logo_9520-v2.png' /></Navbar.Brand>
+                <Navbar.Brand style={{margin: "5px 0 0 20px"}} href="/"><img src='https://secureprintorder.world-cdnserv.com/9520SekanP/logo_9520-v2.png' alt='sekan logo' /></Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav' />
                     <Nav className="mr-auto"> 
